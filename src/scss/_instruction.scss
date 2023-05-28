@@ -1,0 +1,95 @@
+.instr{
+   max-width: 1440px;
+   margin: 0 auto;
+   // position: relative;
+   // height: 100vh;
+
+   &__wrapper{
+      background-color: $white;
+      // position: absolute;
+      // top: 159px;
+      min-width: 100%;
+      padding: 50px 150px;
+
+      .instr__title{
+         color: #000000;
+         font-size: 32px;
+         font-weight: 700;
+         margin-bottom: 80px;
+      }
+
+      .instr__container{
+         display: flex;
+         flex-direction: column;
+         gap: 30px;
+         
+         .instr-block{
+            border: 1px solid $lightGrey;
+            padding: 20px 10px;
+
+            & > h2{
+               font-size: 26px;
+               font-weight: 600;
+               margin-bottom: 40px;
+            }
+
+            .instr-grid{
+               display: grid;
+               grid-template-columns: repeat(2, 1fr);
+               grid-template-rows: repeat(3, 1fr);
+               column-gap: 30px;
+               row-gap: 20px;
+
+               .instr__item{
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  padding: 10px 20px;
+                  border: 1px solid $lightGrey;
+
+                  & > span{
+                     font-size: 14px;
+                     font-weight: 400;
+                  }
+               }
+            }
+
+            .instr-flex{
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+
+               .instr__item-flex{
+                  padding: 10px;
+                  border: 1px solid $lightGrey;
+                  
+                  & > h5{
+                     font-size: 14px;
+                     font-weight: 400;
+                     margin-bottom: 15px;
+                  }
+
+                  .video-block{
+                     min-width: 488px;
+                     min-height: 275px;
+                     background: url('../assets/img/instructionPage/video1.png') no-repeat;
+                     background-size: cover;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     width: 100%;
+
+                  }
+
+                  &:last-child{
+
+                     .video-block{
+                        background: url('../assets/img/instructionPage/video2.png')
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

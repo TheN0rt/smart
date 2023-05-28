@@ -1,0 +1,146 @@
+.modalCalc__wrapper{
+   padding: 50px;
+
+
+   .title{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+
+      & > h1{
+         font-size: 32px;
+         font-weight: 700;
+         color: $white;
+      }
+
+      & > img{
+         cursor: pointer;
+      }
+   }
+
+   .modalCalc__container{
+
+      & > h4{
+         color: $white;
+         font-size: 26px;
+         font-weight: 600;
+         margin-bottom: 30px;
+         margin-left: 150px;
+      }
+
+      .modalCalc__cart-block{
+         display: flex;
+         gap: 20px;
+         justify-content: center;
+         margin-bottom: 40px;
+
+         .cart{
+            width: 230px;
+            height: 210px;
+            display: flex;
+            flex-direction: column;
+            background-color: $white;
+            justify-content: space-between;
+            border-radius: 15px;
+            padding: 30px 15px;
+            cursor: pointer;
+
+            & > img{
+               align-self: flex-end;
+            }
+
+            & > p{
+               align-self: flex-start;
+               font-weight: 500;
+               font-size: 23px;
+            }
+         }
+      }
+   }
+
+   .modalCalc__progress{
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      &-sector{
+         display: flex;
+         align-items: center;
+         gap: 350px;
+         width: 100%;
+
+         .btn-block{
+            align-self: flex-start;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+   
+            .previous{
+               @include btn;
+               border: 2px solid $white;
+               color: $white;
+               background-color: transparent;
+               border-radius: 10px;
+            
+               &:hover{
+                  background-color: $white;
+                  color: $black;
+               }
+            }
+   
+            .next{
+               @include btn;
+               border-radius: 15px;
+               background-color: $red;
+   
+               & > span{
+                  font-size: 16px;
+                  font-weight: 500;
+                  color: $white;
+               }
+            }
+         }
+   
+         .slider-block{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            align-self: center;
+   
+            .slider__btn{
+               width: 45px;
+               height: 45px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background-color: $white;
+               border-radius: 50%;
+            }
+         }
+      }
+
+      &-block{
+         display: flex;
+         flex-direction: column;
+         gap: 30px;
+         overflow-y: hidden;
+
+         & > p{
+            color: $white;
+            font-weight: 400;
+         }
+
+         .progress__bar-block{
+            max-width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.3);
+
+            .progress__bar{
+               transition: 0.3s ease;
+            }
+         }
+      }
+   }
+
+}

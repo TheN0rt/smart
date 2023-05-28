@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/main.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home';
+import Instruction from './pages/Instruction'
+import Projects from './pages/Projects';
+import { useState } from 'react';
 
 function App() {
+  const [isActive, setIsActive] = useState(false)
+  const [isActiveCalc, setIsActiveCalc] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div class="wrapper">
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Home isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>} path='/'/>
+          <Route path='/projects' element={<Projects isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
+          <Route path='/instruction' element={<Instruction isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
+        </Routes>
+      </BrowserRouter>
+   </div>
   );
 }
 

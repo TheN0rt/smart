@@ -1,0 +1,39 @@
+@import './variables';
+@import './normalize';
+@import './preview';
+@import './_garanties';
+@import './opportunities';
+@import './about';
+@import './advantages';
+@import './complect';
+@import './sheme';
+@import './statistics';
+@import './footer';
+@import './instruction';
+@import './headerProject';
+@import './projects';
+@import './modal';
+@import './modalCallElement';
+@import './modalCalcElement';
+@import './carousel';
+@import './form';
+
+.wrapper{
+   // height: 100%;
+   width: 100%;
+   background-color: $red;
+
+   .container{
+      max-width: 1440px;
+      background-color: $white;
+      margin: 0 auto;
+
+      @media (max-width: 1280px) {
+         width: 100%;
+      }
+   }
+
+   @media (max-width: 1280px) {
+      width: 100%;
+   }
+}

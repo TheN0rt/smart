@@ -1,0 +1,31 @@
+.garanties{
+   margin: 35px 60px;
+   display: flex;
+   align-items: center;
+   gap: 45px;
+
+   &-block{
+      width: 280px;
+      height: 132px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      & > img {
+         max-width: 74px;
+         max-height: 52px;
+      }
+
+      & > .title{
+         font-weight: 600;
+         font-size: 20px;
+         color: $black;
+      }
+
+      & > .subtitle {
+         font-size: 15px;
+         font-weight: 500;
+         color: $grey;
+      }
+   }
+}
