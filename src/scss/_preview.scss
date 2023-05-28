@@ -1,6 +1,12 @@
 .preview{
    // padding: 30px 60px;
    background: url('../assets/img/headerBackground.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   @media (max-width: 800px) {
+      background-size: 100% 100%;
+   }
 
    &__top{
 
@@ -53,6 +59,21 @@
                }
             }
 
+            .left {
+
+               & > a{
+
+                  & > img{
+
+                     @media (max-width: 800px) {
+                        width: 80%;
+                     }
+                  }
+               }
+
+
+            }
+
             .burger{
                display: none;
                cursor: pointer;
@@ -90,7 +111,6 @@
                   display: block;
                }
             }
-
          }
 
          &__bottom{
@@ -204,6 +224,10 @@
                }
             }
          }
+
+         @media (max-width: 800px) {
+            padding: 0 20px;
+         }
       }
    }
 
@@ -220,16 +244,28 @@
          flex-direction: column;
          gap: 30px;
 
+         @media (max-width: 800px) {
+            padding: 10px 20px;
+         }
+
          .title{
             font-size: 35px;
             letter-spacing: 0.1em;
             color: $white;
+
+            @media (max-width: 800px) {
+               font-size: 18px;
+            }
          }
 
          .subtitle{
             font-size: 20px;
             font-weight: 500;
             color: $white;
+
+            @media (max-width: 800px) {
+               font-size: 14px;
+            }
          }
       }
 
@@ -255,7 +291,27 @@
                font-size: 16px;
                font-weight: 500;
                color: black;
+
+               @media (max-width: 800px) {
+                  font-size: 12px;
+               }
+
             }
+
+            & > img{
+               @media (max-width: 800px) {
+                  width: 10%;
+               }
+            }
+
+            @media (max-width: 800px) {
+               padding: 10px;
+            }
+         }
+
+         @media (max-width: 800px) {
+            margin-bottom: 30px;
+            padding: 10px;
          }
       }
 
@@ -264,6 +320,33 @@
          right: 0;
          top: calc(74% - 192px);
          // backdrop-filter: blur(5px); дуйствует на весь блок, а не закрашенную область
+
+         @media (max-width: 1220px) {
+            max-width: 40%;
+            top: calc(80% - 192px);
+         }
+
+         @media (max-width: 1112px) {
+            top: calc(107% - 192px);
+         }
+
+         @media (max-width: 1024px) {
+            max-width: 40%;
+            top: calc(114% - 192px);
+         }
+         
+         @media (max-width: 800px) {
+            max-width: 20%;
+            top: calc(80% - 192px);
+            right: 20%;
+         }
+      }
+
+      @media (max-width: 800px) {
+         margin-top: 40px;
+         margin-left: auto;
+         gap: 0;
+         justify-content: space-around;
       }
    }
 }
