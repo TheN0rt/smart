@@ -1,0 +1,24 @@
+import './css/main.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home';
+import Instruction from './pages/Instruction'
+import Projects from './pages/Projects';
+import { useState } from 'react';
+
+function App() {
+  const [isActive, setIsActive] = useState(false)
+  const [isActiveCalc, setIsActiveCalc] = useState(false)
+  return (
+    <div class="wrapper">
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Home isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>} path='/'/>
+          <Route path='/projects' element={<Projects isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
+          <Route path='/instruction' element={<Instruction isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
+        </Routes>
+      </BrowserRouter>
+   </div>
+  );
+}
+
+export default App;

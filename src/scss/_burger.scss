@@ -1,0 +1,129 @@
+.burger__wrapper{
+   position: fixed;
+   right: -100%;
+   top: 0;
+   background-color: $lightGrey;
+   z-index: 999;
+   width: 340px;
+   height: 100vh;
+   transition: all .3s ease-in-out;
+   
+   &.active{
+      right: 0%;
+      overflow-y: scroll;
+   }
+
+   .close{
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 20px 0;
+      margin-top: 20px;
+      margin-right: 40px;
+
+      &-menu{
+
+         & > span{
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all .3s ease-in-out;
+            transition: all .3 ease-in-out;
+            background-color: $black;
+            
+            @media (max-width: 1050px) {
+               
+               &.active{
+
+                  &:nth-child(2){
+                     opacity: 0;
+                  }
+
+                  &:nth-child(1){
+                     transform: translate(0, 8px) rotate(45deg);
+                  }
+
+                  &:nth-child(3){
+                     transform: translate(0, -8px) rotate(-45deg);
+                  }
+               }
+            }
+         }
+      }
+
+      & > p{
+         font-size: 40px;
+         font-weight: 700;
+      }
+   }
+
+   & > ul{
+      max-width: 100%;
+
+      & > li{
+         padding: 20px;
+         border-bottom: 1px solid $grey;
+
+         & > span, a{
+            font-weight: 600;
+         }
+
+         & > p{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+
+            & > span{
+               font-weight: 600;
+            }
+         }
+
+         & > ul{
+            display: none;
+
+            &.active{
+               display: block;
+               top: 0;
+               left: 0;
+            }
+
+            & > li{
+               
+               & > a{
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 20px;
+
+                  & > span{
+                     font-weight: 600;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .btn-sector{
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 20px;
+
+      & > span{
+         color: $blue;
+         text-align: center
+      }
+
+      .btn{
+         @include btn;
+
+         & > p{
+            font-weight: 600;
+            font-size: 16px;
+         }
+      }
+   }
+}
