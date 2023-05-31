@@ -10,7 +10,7 @@ function App() {
   const [isActiveCalc, setIsActiveCalc] = useState(false)
   return (
     <div class="wrapper">
-      <BrowserRouter basename='/smart'>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route exact path='/' element={<Home isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>} />
           <Route path='/projects' element={<Projects isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
