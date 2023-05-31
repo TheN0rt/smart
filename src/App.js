@@ -10,13 +10,13 @@ function App() {
   const [isActiveCalc, setIsActiveCalc] = useState(false)
   return (
     <div class="wrapper">
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
-          <Route element={<Home isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>} path='/home'/>
+          <Route element={<Home isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>} exact path='/'/>
           <Route path='/projects' element={<Projects isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
           <Route path='/instruction' element={<Instruction isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
    </div>
   );
 }
