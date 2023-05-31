@@ -1,5 +1,5 @@
 import './css/main.css'
-import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home';
 import Instruction from './pages/Instruction'
 import Projects from './pages/Projects';
@@ -10,13 +10,13 @@ function App() {
   const [isActiveCalc, setIsActiveCalc] = useState(false)
   return (
     <div class="wrapper">
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
-          <Route element={<Home isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>} path=''/>
+          <Route element={<Home isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>} path='/home'/>
           <Route path='/projects' element={<Projects isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
           <Route path='/instruction' element={<Instruction isActive={isActive} setIsActive={setIsActive} isActiveCalc={isActiveCalc} setIsActiveCalc={setIsActiveCalc}/>}/>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
    </div>
   );
 }
