@@ -128,7 +128,7 @@ a {
   transition: all 0.3 ease-in-out;
   background-color: #191919;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1280px) {
   .preview__top .header__top .burger span.active:nth-child(2) {
     opacity: 0;
   }
@@ -2926,7 +2926,7 @@ form .submit-block > button > span {
   transition: all 0.3 ease-in-out;
   background-color: #191919;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1280px) {
   .burger__wrapper .close-menu > span.active:nth-child(2) {
     opacity: 0;
   }
