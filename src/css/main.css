@@ -63,7 +63,7 @@ a {
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.5);
-  padding: 0px 60px 25px;
+  padding: 0px 60px;
 }
 .preview__top .header__top {
   display: flex;
@@ -94,7 +94,7 @@ a {
   color: #312EE9;
   cursor: pointer;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1280px) {
   .preview__top .header__top .right {
     position: fixed;
     right: -100%;
@@ -139,43 +139,41 @@ a {
     transform: translate(0, -8px) rotate(-45deg);
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1280px) {
   .preview__top .header__top .burger {
     display: block;
   }
 }
-.preview__top .header__bottom nav ul {
+.preview__top .header__bottom nav > ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.preview__top .header__bottom nav ul li {
+.preview__top .header__bottom nav > ul > li {
   display: flex;
   align-items: center;
   gap: 10px;
   position: relative;
+  padding: 20px;
 }
-.preview__top .header__bottom nav ul li > a, .preview__top .header__bottom nav ul li span {
+.preview__top .header__bottom nav > ul > li > a, .preview__top .header__bottom nav > ul > li span {
   cursor: pointer;
   color: #191919;
   font-weight: 600;
 }
-.preview__top .header__bottom nav ul li > .dropDown {
+.preview__top .header__bottom nav > ul > li > .dropDown {
   display: none;
-}
-.preview__top .header__bottom nav ul li > .dropDown.active {
   min-width: 270px;
   z-index: 999;
   position: absolute;
-  top: 44px;
+  top: 59px;
   left: -20px;
-  display: flex;
   flex-direction: column;
   align-items: center;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
 }
-.preview__top .header__bottom nav ul li > .dropDown.active > li {
+.preview__top .header__bottom nav > ul > li > .dropDown > li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   min-width: 100%;
   padding: 13px;
@@ -185,28 +183,34 @@ a {
   display: flex;
   align-items: center;
 }
-.preview__top .header__bottom nav ul li > .dropDown.active > li:hover {
+.preview__top .header__bottom nav > ul > li > .dropDown > li:hover {
   background-color: #E8E8F0;
 }
-.preview__top .header__bottom nav ul li > .dropDown.active > li > a {
+.preview__top .header__bottom nav > ul > li > .dropDown > li > a {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.preview__top .header__bottom nav ul li > .dropDown.active > li > a > span {
+.preview__top .header__bottom nav > ul > li > .dropDown > li > a > span {
   font-size: 14px;
   font-weight: 500;
 }
-.preview__top .header__bottom nav ul li > .dropDown.active > li:last-child {
+.preview__top .header__bottom nav > ul > li > .dropDown > li:last-child {
   border-bottom: none;
 }
-.preview__top .header__bottom nav ul li > .dropDown.active:last-child {
+.preview__top .header__bottom nav > ul > li > .dropDown.active {
+  display: flex;
+}
+.preview__top .header__bottom nav > ul > li > .dropDown:last-child {
   left: -100px;
+}
+.preview__top .header__bottom nav > ul > li:hover > .dropDown {
+  display: flex;
 }
 .preview__top .header__bottom nav.black ul li a, .preview__top .header__bottom nav.black ul li span {
   color: #FFFFFF;
 }
-@media (max-width: 1050px) {
+@media (max-width: 1280px) {
   .preview__top .header__bottom {
     position: fixed;
     right: -100%;
@@ -2715,6 +2719,11 @@ footer .bottom p > span:last-child {
   font-weight: 500;
   font-size: 10px;
   color: rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 820px) {
+  .carousel > h4 {
+    justify-content: center;
+  }
 }
 @media (max-width: 540px) {
   .carousel > h4 {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ShopIcon from '../assets/img/shopIcon.png'
 import CallIcon from '../assets/img/callIcon.png'
@@ -27,12 +27,12 @@ import articles from '../assets/img/dropDown/articles.svg'
 import videos from '../assets/img/dropDown/videos.svg'
 import faq from '../assets/img/dropDown/faq.svg'
 import Burger from './Burger'
+import { useResize } from '../customHooks/useResize'
 
-const Header = ({children, setIsActive, className, burgerColor}) => {
-  const [isMouseMoveAdv, setIsMouseMoveAdv] = useState(false)
-  const [isMouseMoveInfo, setIsMouseMoveInfo] = useState(false)
-  const [isMouseMoveDB, setIsMouseMoveDB] = useState(false)
+const Header = ({children, setIsActive, className, burgerColor, isBlockVisible}) => {
   const [isBurgerActive, setBurgerActive] = useState(false)
+
+  const windowWidth = useResize()
 
   return (
    <section className="preview">
@@ -45,21 +45,33 @@ const Header = ({children, setIsActive, className, burgerColor}) => {
                   </Link>
                </div>
                <div className="right">
-                  <button className="header__btn btn">
+                  <button className="header__btn btn" style={isBlockVisible ? {
+                     display: 'flex'
+                  } : {
+                     display: 'none'
+                  }}>
                      <img src={ShopIcon} alt="" className="icon"/>
                      <p>Заказать демонстрацию</p>
                   </button>
-                  <button className="header__btn btn" onClick={() => setIsActive(true)}>
+                  <button className="header__btn btn" onClick={() => setIsActive(true)} style={isBlockVisible ? {
+                     display: 'flex'
+                  } : {
+                     display: 'none'
+                  }}>
                      <img src={CallIcon} alt="" className="icon"/>
                      <p>Заказать звонок</p>
                   </button>
-                  <span className="header__number" 
-                     onClick={() => setIsActive(true)}>
+                  <span className="header__number" >
                      +7 (499) 283-12-73
                   </span>
                </div>
                <div className="burger" 
-               onClick={() => setBurgerActive(!isBurgerActive)}>
+               onClick={() => setBurgerActive(!isBurgerActive)}
+               style={isBlockVisible && windowWidth.width <= 1280 ? {
+                  display: 'block'
+               } : {
+                  display: 'none'
+               }}>
                   <span style={{
                      backgroundColor: burgerColor
                   }} className={isBurgerActive ? 'active' : ''}></span>
@@ -72,14 +84,15 @@ const Header = ({children, setIsActive, className, burgerColor}) => {
                </div>
             </div>
             <div className="header__bottom">
-               <nav className={className}>
+               <nav className={className} style={isBlockVisible ? {
+                     display: 'block'
+                  } : {
+                     display: 'none'
+                  }}>
                   <ul>
-                     <li
-                        onMouseEnter={() => setIsMouseMoveAdv(true)}
-                        onClick={() => setIsMouseMoveAdv(!isMouseMoveAdv)}>
+                     <li>
                         <ul 
-                        className={isMouseMoveAdv ? 'dropDown active' : 'dropDown'}
-                        onMouseLeave={() => setIsMouseMoveAdv(false)}>
+                        className='dropDown'>
                            <li> 
                               <Link>
                                  <img src={lamp} alt="lamp" />
@@ -150,13 +163,10 @@ const Header = ({children, setIsActive, className, burgerColor}) => {
                      <li>
                         <span>Цены</span> 
                      </li>
-                     <li onMouseEnter={() => setIsMouseMoveInfo(true)}
-                     onClick={() => setIsMouseMoveInfo(!isMouseMoveInfo)}>
+                     <li>
                         <span>Информация</span>
                         <img src={className === 'black' ? ArrowDownWhite : ArrowDown} alt="arrowDown"/>
-                        <ul 
-                           className={isMouseMoveInfo ? 'dropDown active' : 'dropDown'}
-                           onMouseLeave={() => setIsMouseMoveInfo(false)}>
+                        <ul className='dropDown'>
                            <li> 
                               <Link>
                                  <img src={about} alt="about" />
@@ -186,13 +196,10 @@ const Header = ({children, setIsActive, className, burgerColor}) => {
                      <li> 
                         <span>Контакты</span> 
                      </li>
-                     <li onMouseEnter={() => setIsMouseMoveDB(true)}
-                     onClick={() => setIsMouseMoveDB(!isMouseMoveDB)}>
+                     <li>
                         <span>База знаний</span>
                         <img src={className === 'black' ? ArrowDownWhite : ArrowDown} alt="arrowDown"/>
-                        <ul 
-                           className={isMouseMoveDB ? 'dropDown active' : 'dropDown'}
-                           onMouseLeave={() => setIsMouseMoveDB(false)}>
+                        <ul className={'dropDown'}>
                            <li> 
                               <Link to={'/instruction'}>
                                  <img src={instruction} alt="instruction" />

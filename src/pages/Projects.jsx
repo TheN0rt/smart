@@ -80,7 +80,7 @@ const Projects = ({isActive, setIsActive, isActiveCalc, setIsActiveCalc}) => {
   const [completed, setCompleted] = useState(1)
   return (
     <div className='projects__wrapper'>
-      <Header setIsActive={setIsActive}>
+      <Header setIsActive={setIsActive} isBlockVisible={true}>
         <HeaderProject/>
       </Header>
       <div className="projects__container">

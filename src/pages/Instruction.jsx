@@ -35,7 +35,7 @@ const systemArr2 = [
 const Instruction = ({isActive, setIsActive}) => {
   return (
     <div className="instr">
-      <Header setIsActive={setIsActive}/>
+      <Header setIsActive={setIsActive} isBlockVisible={true}/>
       <div className="instr__wrapper">
         <h1 className="instr__title">Инструкции</h1>
         <div className="instr__container">

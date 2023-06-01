@@ -19,7 +19,7 @@ const Home = ({isActive, setIsActive, isActiveCalc, setIsActiveCalc}) => {
 
   return (
    <div class="container">
-      <Header setIsActive={setIsActive}>
+      <Header setIsActive={setIsActive} isBlockVisible={true}>
         <Smart setIsActive={setIsActiveCalc}/>
       </Header>
       <Garanties/>
@@ -30,12 +30,12 @@ const Home = ({isActive, setIsActive, isActiveCalc, setIsActiveCalc}) => {
       <Sheme/>
       <Statistics/>
       <Footer setIsActive={setIsActive} setIsActiveCalc={setIsActiveCalc}/>
-      <Modal isActive={isActive} setIsActive={setIsActive}>
+      <Modal isActive={isActive} setIsActive={setIsActive} isBlockVisible={false}>
         <Header setIsActive={() => {}} burgerColor={'black'}/>
         <ModalCallElement setIsActive={setIsActive}/>
       </Modal>
       <Modal isActive={isActiveCalc} setIsActive={setIsActiveCalc} className='black'>
-        <Header setIsActive={() => {}} className='black'/>
+        <Header setIsActive={() => {}} className='black' isBlockVisible={false}/>
         <ModalCalcElement completed={completed} setIsActiveCalc={setIsActiveCalc} setCompleted={setCompleted}/>
       </Modal>
    </div>

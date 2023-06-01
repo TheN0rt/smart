@@ -30,6 +30,8 @@ const Burger = ({isActive, setModalActive, setBurgerActive}) => {
    const [isDropdownOport, setDropdownOport] = useState(false)
    const [isDropdownInfo, setDropdownInfo] = useState(false)
    const [isDropdownDB, setDropdownDB] = useState(false)
+
+
    useEffect(() => {
       isActive ?
       document.querySelector('body').classList.add('stop-scrolling')
