@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/smart/static/css/main.23d723c9.css",
+    "main.css": "/smart/static/css/main.b057ce8f.css",
     "main.js": "/smart/static/js/main.d5614673.js",
     "static/media/iphone-12-mini--white.svg": "/smart/static/media/iphone-12-mini--white.febfee49715098bb9fb90ace2007908e.svg",
     "static/media/headerBackground.png": "/smart/static/media/headerBackground.e63e4d5a759585c7a168.png",
@@ -85,11 +85,11 @@
     "static/media/close.svg": "/smart/static/media/close.2c59c01585159004bdb2a2550c892553.svg",
     "static/media/checked.svg": "/smart/static/media/checked.0c41e77aee323fbe64a26b12d936bc13.svg",
     "static/media/Vector 31.svg": "/smart/static/media/Vector 31.cc4e16ef8c9d20bb68c5ab32bc0caa37.svg",
-    "main.23d723c9.css.map": "/smart/static/css/main.23d723c9.css.map",
+    "main.b057ce8f.css.map": "/smart/static/css/main.b057ce8f.css.map",
     "main.d5614673.js.map": "/smart/static/js/main.d5614673.js.map"
   },
   "entrypoints": [
-    "static/css/main.23d723c9.css",
+    "static/css/main.b057ce8f.css",
     "static/js/main.d5614673.js"
   ]
 }
